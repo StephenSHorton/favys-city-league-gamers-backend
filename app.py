@@ -87,12 +87,12 @@ def check_password():
 
   username = request.json['username']
   password = request.json['password']
-
+  
   for result in results:
     if result["username"] == username:
       if bcrypt.check_password_hash(result["password"], password):
         return "SUCCESSFUL LOGIN"
-    return "FAILED LOGIN ATTEMPT"
+  return "FAILED LOGIN ATTEMPT"
 
 # UPDATE SPECIFIC
 @app.route('/user/<id>', methods=['PUT'])
