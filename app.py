@@ -80,7 +80,7 @@ def get_user(id):
   return user_schema.jsonify(user)
 
 # CHECK LOGIN CREDENTIALS
-@app.route('/login', methods=['GET'])
+@app.route('/login', methods=['POST'])
 def check_password():
   all_users = User.query.all()
   results = users_schema.dump(all_users)
