@@ -4,7 +4,6 @@ from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_heroku import Heroku
 from flask_bcrypt import Bcrypt
-import os
 
 # usernames cannot be more than 15 chars
 # clan cannot be more than 15 chars
@@ -13,7 +12,7 @@ import os
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://oxzqkchfssxhjf:a0048232bd43dc769cc40f25bff26e410ff43b4bbb67cb95db1ecb35b4da0c9e@ec2-54-243-239-199.compute-1.amazonaws.com:5432/d4bq1f7ed7pd84'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 heroku = Heroku(app)
