@@ -13,7 +13,6 @@ flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-heroku = "*"
 gunicorn = "*"
-psycopg2-binary = "*"
 flask-bcrypt = "*"
 
 [requires]
