@@ -94,6 +94,19 @@ def check_password():
         return "SUCCESSFUL LOGIN"
   return "FAILED LOGIN ATTEMPT"
 
+# CHECK IF USERNAME IS TAKEN
+@app.route('/usernamecheck', methods=['POST'])
+def check_password():
+  all_users = User.query.all()
+  results = users_schema.dump(all_users)
+
+  username = request.json['username']
+  
+  for result in results:
+    if result["username"] == username:
+       return "USERNAME IS TAKEN"
+  return "USERNAME IS NOT TAKEN"
+
 # UPDATE SPECIFIC
 @app.route('/user/<id>', methods=['PUT'])
 def update_user(id):
