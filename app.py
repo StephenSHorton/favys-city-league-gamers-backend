@@ -11,12 +11,12 @@ from flask_bcrypt import Bcrypt
 # status cannot be more than 15 chars
 
 app = Flask(__name__)
+CORS(app)
 heroku = Heroku(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://oxzqkchfssxhjf:a0048232bd43dc769cc40f25bff26e410ff43b4bbb67cb95db1ecb35b4da0c9e@ec2-54-243-239-199.compute-1.amazonaws.com:5432/d4bq1f7ed7pd84'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-CORS(app)
 bcrypt = Bcrypt()
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
