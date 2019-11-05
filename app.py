@@ -96,7 +96,7 @@ def check_password():
 
 # CHECK IF USERNAME IS TAKEN
 @app.route('/usernamecheck', methods=['POST'])
-def check_password():
+def check_username():
   all_users = User.query.all()
   results = users_schema.dump(all_users)
 
